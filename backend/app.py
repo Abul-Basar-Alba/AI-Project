@@ -330,14 +330,21 @@ def chat():
             'category': 'greeting'
         })
     
-    # Check for specific health domains with more keywords
-    pregnancy_keywords = ['pregnancy', 'pregnant', 'week', 'trimester', 'baby', 'fetal', 'prenatal', 'gorbhoboti']
+    # Check for specific health domains with extensive keywords
+    pregnancy_keywords = ['pregnancy', 'pregnant', 'week', 'trimester', 'baby', 'fetal', 'prenatal', 
+                          'gorbhoboti', 'conception', 'maternity', 'expecting']
     womens_health_keywords = ['period', 'menstrual', 'cramp', 'pcos', 'ovulation', 'fertility', 
-                               'menopause', 'endometriosis', 'masik', 'menses']
+                               'menopause', 'endometriosis', 'masik', 'menses', 'menstruation',
+                               'pms', 'dysmenorrhea', 'amenorrhea', 'gynecology']
     nutrition_keywords = ['calorie', 'calories', 'food', 'nutrition', 'diet', 'eat', 'meal', 
-                          'protein', 'carb', 'fat', 'vitamin', 'khabar', 'khaddo']
+                          'protein', 'carb', 'fat', 'vitamin', 'khabar', 'khaddo', 'nutrient',
+                          'mineral', 'supplement', 'balanced diet', 'healthy eating']
     exercise_keywords = ['exercise', 'workout', 'fitness', 'gym', 'running', 'weight loss', 
-                         'cardio', 'strength', 'yoga', 'kashrot', 'byayam']
+                         'cardio', 'strength', 'yoga', 'kashrot', 'byayam', 'training',
+                         'jogging', 'walking', 'swimming', 'cycling', 'sport', 'activity',
+                         'physical', 'movement', 'hiit', 'aerobic', 'anaerobic']
+    steps_keywords = ['step', 'steps', 'walk', 'walking', 'daily walk', 'pedestrian',
+                      'stroll', 'pace', 'gait', 'stride', 'foot']
     
     # Pregnancy queries
     if any(word in message_lower for word in pregnancy_keywords):
@@ -398,6 +405,35 @@ def chat():
             'response': response_text,
             'confidence': 0.85,
             'category': 'nutrition'
+        })
+    
+    # Steps and walking queries
+    if any(word in message_lower for word in steps_keywords):
+        response_text = '👣 **Daily Steps Recommendations:**\n\n' \
+                      '**Step Targets:**\n' \
+                      '• Minimum: 5,000 steps (sedentary prevention)\n' \
+                      '• Good Health: 7,000-8,000 steps\n' \
+                      '• Optimal Fitness: 10,000 steps\n' \
+                      '• Active Lifestyle: 12,000+ steps\n\n' \
+                      '**Health Benefits:**\n' \
+                      '• Improves cardiovascular health\n' \
+                      '• Aids weight management (burns 200-400 calories/hour)\n' \
+                      '• Reduces stress and improves mood\n' \
+                      '• Strengthens bones and muscles\n' \
+                      '• Lowers blood pressure and blood sugar\n\n' \
+                      '**Tips to Increase Steps:**\n' \
+                      '• Take stairs instead of elevator\n' \
+                      '• Park farther from entrance\n' \
+                      '• Walk during phone calls\n' \
+                      '• Walk after meals (aids digestion)\n' \
+                      '• Use fitness tracker to monitor progress\n\n' \
+                      '💡 Even 5,000 steps is better than sedentary! Every step counts!'
+        
+        return jsonify({
+            'message': message,
+            'response': response_text,
+            'confidence': 0.95,
+            'category': 'exercise'
         })
     
     # Exercise queries
