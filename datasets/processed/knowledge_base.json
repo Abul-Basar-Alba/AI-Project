@@ -1,0 +1,466 @@
+[
+  {
+    "category":"nutrition",
+    "topic":"Rice",
+    "question":"What is the nutritional value of Rice?",
+    "answer":"Rice contains 130 calories, 2.7g protein, 28.0g carbs, and 0.3g fat per serving.",
+    "data":{
+      "food_name":"Rice",
+      "calories":130,
+      "protein":2.7,
+      "carbs":28.0,
+      "fat":0.3,
+      "category":"grain",
+      "calories_per_100g":130,
+      "protein_ratio":0.020610687,
+      "carb_ratio":0.213740458,
+      "fat_ratio":0.0022900763,
+      "calorie_density":"low"
+    }
+  },
+  {
+    "category":"nutrition",
+    "topic":"Chicken Breast",
+    "question":"What is the nutritional value of Chicken Breast?",
+    "answer":"Chicken Breast contains 165 calories, 31.0g protein, 0.0g carbs, and 3.6g fat per serving.",
+    "data":{
+      "food_name":"Chicken Breast",
+      "calories":165,
+      "protein":31.0,
+      "carbs":0.0,
+      "fat":3.6,
+      "category":"protein",
+      "calories_per_100g":165,
+      "protein_ratio":0.186746988,
+      "carb_ratio":0.0,
+      "fat_ratio":0.021686747,
+      "calorie_density":"medium"
+    }
+  },
+  {
+    "category":"nutrition",
+    "topic":"Apple",
+    "question":"What is the nutritional value of Apple?",
+    "answer":"Apple contains 52 calories, 0.3g protein, 14.0g carbs, and 0.2g fat per serving.",
+    "data":{
+      "food_name":"Apple",
+      "calories":52,
+      "protein":0.3,
+      "carbs":14.0,
+      "fat":0.2,
+      "category":"fruit",
+      "calories_per_100g":52,
+      "protein_ratio":0.0056603774,
+      "carb_ratio":0.2641509434,
+      "fat_ratio":0.0037735849,
+      "calorie_density":"low"
+    }
+  },
+  {
+    "category":"nutrition",
+    "topic":"Egg",
+    "question":"What is the nutritional value of Egg?",
+    "answer":"Egg contains 68 calories, 6.0g protein, 0.6g carbs, and 4.8g fat per serving.",
+    "data":{
+      "food_name":"Egg",
+      "calories":68,
+      "protein":6.0,
+      "carbs":0.6,
+      "fat":4.8,
+      "category":"protein",
+      "calories_per_100g":68,
+      "protein_ratio":0.0869565217,
+      "carb_ratio":0.0086956522,
+      "fat_ratio":0.0695652174,
+      "calorie_density":"low"
+    }
+  },
+  {
+    "category":"nutrition",
+    "topic":"Banana",
+    "question":"What is the nutritional value of Banana?",
+    "answer":"Banana contains 89 calories, 1.1g protein, 23.0g carbs, and 0.3g fat per serving.",
+    "data":{
+      "food_name":"Banana",
+      "calories":89,
+      "protein":1.1,
+      "carbs":23.0,
+      "fat":0.3,
+      "category":"fruit",
+      "calories_per_100g":89,
+      "protein_ratio":0.0122222222,
+      "carb_ratio":0.2555555556,
+      "fat_ratio":0.0033333333,
+      "calorie_density":"low"
+    }
+  },
+  {
+    "category":"nutrition",
+    "topic":"Milk",
+    "question":"What is the nutritional value of Milk?",
+    "answer":"Milk contains 42 calories, 3.4g protein, 5.0g carbs, and 1.0g fat per serving.",
+    "data":{
+      "food_name":"Milk",
+      "calories":42,
+      "protein":3.4,
+      "carbs":5.0,
+      "fat":1.0,
+      "category":"dairy",
+      "calories_per_100g":42,
+      "protein_ratio":0.0790697674,
+      "carb_ratio":0.1162790698,
+      "fat_ratio":0.023255814,
+      "calorie_density":"very_low"
+    }
+  },
+  {
+    "category":"nutrition",
+    "topic":"Bread",
+    "question":"What is the nutritional value of Bread?",
+    "answer":"Bread contains 79 calories, 2.7g protein, 15.0g carbs, and 1.0g fat per serving.",
+    "data":{
+      "food_name":"Bread",
+      "calories":79,
+      "protein":2.7,
+      "carbs":15.0,
+      "fat":1.0,
+      "category":"grain",
+      "calories_per_100g":79,
+      "protein_ratio":0.03375,
+      "carb_ratio":0.1875,
+      "fat_ratio":0.0125,
+      "calorie_density":"low"
+    }
+  },
+  {
+    "category":"nutrition",
+    "topic":"Fish",
+    "question":"What is the nutritional value of Fish?",
+    "answer":"Fish contains 206 calories, 22.0g protein, 0.0g carbs, and 12.0g fat per serving.",
+    "data":{
+      "food_name":"Fish",
+      "calories":206,
+      "protein":22.0,
+      "carbs":0.0,
+      "fat":12.0,
+      "category":"protein",
+      "calories_per_100g":206,
+      "protein_ratio":0.1062801932,
+      "carb_ratio":0.0,
+      "fat_ratio":0.0579710145,
+      "calorie_density":"medium"
+    }
+  },
+  {
+    "category":"fitness",
+    "topic":"Walking",
+    "question":"How many calories does Walking burn?",
+    "answer":"Walking burns approximately 200 calories per hour. It's a low intensity cardio exercise.",
+    "data":{
+      "exercise_name":"Walking",
+      "calories_per_hour":200,
+      "intensity":"low",
+      "type":"cardio"
+    }
+  },
+  {
+    "category":"fitness",
+    "topic":"Running",
+    "question":"How many calories does Running burn?",
+    "answer":"Running burns approximately 600 calories per hour. It's a high intensity cardio exercise.",
+    "data":{
+      "exercise_name":"Running",
+      "calories_per_hour":600,
+      "intensity":"high",
+      "type":"cardio"
+    }
+  },
+  {
+    "category":"fitness",
+    "topic":"Cycling",
+    "question":"How many calories does Cycling burn?",
+    "answer":"Cycling burns approximately 400 calories per hour. It's a medium intensity cardio exercise.",
+    "data":{
+      "exercise_name":"Cycling",
+      "calories_per_hour":400,
+      "intensity":"medium",
+      "type":"cardio"
+    }
+  },
+  {
+    "category":"fitness",
+    "topic":"Swimming",
+    "question":"How many calories does Swimming burn?",
+    "answer":"Swimming burns approximately 500 calories per hour. It's a high intensity cardio exercise.",
+    "data":{
+      "exercise_name":"Swimming",
+      "calories_per_hour":500,
+      "intensity":"high",
+      "type":"cardio"
+    }
+  },
+  {
+    "category":"fitness",
+    "topic":"Yoga",
+    "question":"How many calories does Yoga burn?",
+    "answer":"Yoga burns approximately 180 calories per hour. It's a low intensity flexibility exercise.",
+    "data":{
+      "exercise_name":"Yoga",
+      "calories_per_hour":180,
+      "intensity":"low",
+      "type":"flexibility"
+    }
+  },
+  {
+    "category":"fitness",
+    "topic":"Weight Lifting",
+    "question":"How many calories does Weight Lifting burn?",
+    "answer":"Weight Lifting burns approximately 300 calories per hour. It's a medium intensity strength exercise.",
+    "data":{
+      "exercise_name":"Weight Lifting",
+      "calories_per_hour":300,
+      "intensity":"medium",
+      "type":"strength"
+    }
+  },
+  {
+    "category":"fitness",
+    "topic":"Dancing",
+    "question":"How many calories does Dancing burn?",
+    "answer":"Dancing burns approximately 350 calories per hour. It's a medium intensity cardio exercise.",
+    "data":{
+      "exercise_name":"Dancing",
+      "calories_per_hour":350,
+      "intensity":"medium",
+      "type":"cardio"
+    }
+  },
+  {
+    "category":"general",
+    "topic":"general",
+    "question":"How to improve health?",
+    "answer":"To improve health: eat balanced diet, exercise regularly, get 7-8 hours sleep, stay hydrated, manage stress, and have regular checkups.",
+    "data":{
+
+    }
+  },
+  {
+    "category":"nutrition",
+    "topic":"nutrition",
+    "question":"What foods are good for heart?",
+    "answer":"Heart-healthy foods include: salmon, walnuts, berries, oats, dark chocolate, leafy greens, avocado, and olive oil.",
+    "data":{
+
+    }
+  },
+  {
+    "category":"hydration",
+    "topic":"hydration",
+    "question":"How much water should I drink daily?",
+    "answer":"Adults should drink 2-3 liters (8-10 glasses) of water daily. More if exercising or in hot weather.",
+    "data":{
+
+    }
+  },
+  {
+    "category":"bmi",
+    "topic":"bmi",
+    "question":"What is a healthy BMI range?",
+    "answer":"Healthy BMI range is 18.5-24.9. Below 18.5 is underweight, 25-29.9 is overweight, 30+ is obese.",
+    "data":{
+
+    }
+  },
+  {
+    "category":"blood_pressure",
+    "topic":"blood_pressure",
+    "question":"How to reduce blood pressure?",
+    "answer":"Reduce BP by: limiting salt, exercising regularly, maintaining healthy weight, limiting alcohol, managing stress, eating potassium-rich foods.",
+    "data":{
+
+    }
+  },
+  {
+    "category":"fitness",
+    "topic":"fitness",
+    "question":"Best exercises for weight loss?",
+    "answer":"Best exercises for weight loss: running, cycling, swimming, HIIT workouts, strength training, and walking 10,000+ steps daily.",
+    "data":{
+
+    }
+  },
+  {
+    "category":"sleep",
+    "topic":"sleep",
+    "question":"How to improve sleep quality?",
+    "answer":"Improve sleep: maintain consistent schedule, avoid screens before bed, keep room dark and cool, avoid caffeine late, exercise regularly.",
+    "data":{
+
+    }
+  },
+  {
+    "category":"diabetes",
+    "topic":"diabetes",
+    "question":"What is healthy blood sugar level?",
+    "answer":"Normal fasting blood sugar: 70-100 mg\/dL. Prediabetes: 100-125. Diabetes: 126+. After meals: below 140 mg\/dL is normal.",
+    "data":{
+
+    }
+  },
+  {
+    "category":"pregnancy",
+    "topic":"Week 1",
+    "question":"What happens during pregnancy week 1?",
+    "answer":"Week 1: Baby - Conception occurs. Mother - Preparing for pregnancy. Advice: Start taking folic acid",
+    "data":{
+      "week":1,
+      "baby_development":"Conception occurs",
+      "mother_changes":"Preparing for pregnancy",
+      "advice":"Start taking folic acid",
+      "trimester":1
+    }
+  },
+  {
+    "category":"pregnancy",
+    "topic":"Week 8",
+    "question":"What happens during pregnancy week 8?",
+    "answer":"Week 8: Baby - Size of a raspberry. Mother - Morning sickness may begin. Advice: Eat small frequent meals",
+    "data":{
+      "week":8,
+      "baby_development":"Size of a raspberry",
+      "mother_changes":"Morning sickness may begin",
+      "advice":"Eat small frequent meals",
+      "trimester":1
+    }
+  },
+  {
+    "category":"pregnancy",
+    "topic":"Week 12",
+    "question":"What happens during pregnancy week 12?",
+    "answer":"Week 12: Baby - Size of a plum. Mother - First trimester ending. Advice: First ultrasound scan",
+    "data":{
+      "week":12,
+      "baby_development":"Size of a plum",
+      "mother_changes":"First trimester ending",
+      "advice":"First ultrasound scan",
+      "trimester":1
+    }
+  },
+  {
+    "category":"pregnancy",
+    "topic":"Week 20",
+    "question":"What happens during pregnancy week 20?",
+    "answer":"Week 20: Baby - Size of a banana. Mother - May feel baby movements. Advice: Midpoint scan, eat iron-rich foods",
+    "data":{
+      "week":20,
+      "baby_development":"Size of a banana",
+      "mother_changes":"May feel baby movements",
+      "advice":"Midpoint scan, eat iron-rich foods",
+      "trimester":2
+    }
+  },
+  {
+    "category":"pregnancy",
+    "topic":"Week 28",
+    "question":"What happens during pregnancy week 28?",
+    "answer":"Week 28: Baby - Size of an eggplant. Mother - Third trimester begins. Advice: Monitor baby kicks, prepare nursery",
+    "data":{
+      "week":28,
+      "baby_development":"Size of an eggplant",
+      "mother_changes":"Third trimester begins",
+      "advice":"Monitor baby kicks, prepare nursery",
+      "trimester":3
+    }
+  },
+  {
+    "category":"pregnancy",
+    "topic":"Week 40",
+    "question":"What happens during pregnancy week 40?",
+    "answer":"Week 40: Baby - Full term baby. Mother - Ready for delivery. Advice: Watch for labor signs, hospital bag ready",
+    "data":{
+      "week":40,
+      "baby_development":"Full term baby",
+      "mother_changes":"Ready for delivery",
+      "advice":"Watch for labor signs, hospital bag ready",
+      "trimester":3
+    }
+  },
+  {
+    "category":"womens_health",
+    "topic":"Cramps",
+    "question":"What to do for Cramps?",
+    "answer":"For Cramps during Menstrual phase: Use heating pad, take pain relief, rest",
+    "data":{
+      "symptom":"Cramps",
+      "phase":"Menstrual",
+      "advice":"Use heating pad, take pain relief, rest",
+      "severity":"moderate",
+      "severity_score":2
+    }
+  },
+  {
+    "category":"womens_health",
+    "topic":"Bloating",
+    "question":"What to do for Bloating?",
+    "answer":"For Bloating during Luteal phase: Reduce salt intake, stay hydrated, gentle exercise",
+    "data":{
+      "symptom":"Bloating",
+      "phase":"Luteal",
+      "advice":"Reduce salt intake, stay hydrated, gentle exercise",
+      "severity":"mild",
+      "severity_score":1
+    }
+  },
+  {
+    "category":"womens_health",
+    "topic":"Mood swings",
+    "question":"What to do for Mood swings?",
+    "answer":"For Mood swings during Luteal phase: Practice relaxation techniques, get adequate sleep",
+    "data":{
+      "symptom":"Mood swings",
+      "phase":"Luteal",
+      "advice":"Practice relaxation techniques, get adequate sleep",
+      "severity":"moderate",
+      "severity_score":2
+    }
+  },
+  {
+    "category":"womens_health",
+    "topic":"Fatigue",
+    "question":"What to do for Fatigue?",
+    "answer":"For Fatigue during Menstrual phase: Rest well, eat iron-rich foods, stay hydrated",
+    "data":{
+      "symptom":"Fatigue",
+      "phase":"Menstrual",
+      "advice":"Rest well, eat iron-rich foods, stay hydrated",
+      "severity":"moderate",
+      "severity_score":2
+    }
+  },
+  {
+    "category":"womens_health",
+    "topic":"Headache",
+    "question":"What to do for Headache?",
+    "answer":"For Headache during Menstrual phase: Stay hydrated, reduce stress, get enough sleep",
+    "data":{
+      "symptom":"Headache",
+      "phase":"Menstrual",
+      "advice":"Stay hydrated, reduce stress, get enough sleep",
+      "severity":"mild",
+      "severity_score":1
+    }
+  },
+  {
+    "category":"womens_health",
+    "topic":"Breast tenderness",
+    "question":"What to do for Breast tenderness?",
+    "answer":"For Breast tenderness during Luteal phase: Wear comfortable bra, reduce caffeine",
+    "data":{
+      "symptom":"Breast tenderness",
+      "phase":"Luteal",
+      "advice":"Wear comfortable bra, reduce caffeine",
+      "severity":"mild",
+      "severity_score":1
+    }
+  }
+]

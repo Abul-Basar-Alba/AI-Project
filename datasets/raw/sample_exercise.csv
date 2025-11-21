@@ -1,0 +1,8 @@
+exercise_name,calories_per_hour,intensity,type
+Walking,200,low,cardio
+Running,600,high,cardio
+Cycling,400,medium,cardio
+Swimming,500,high,cardio
+Yoga,180,low,flexibility
+Weight Lifting,300,medium,strength
+Dancing,350,medium,cardio

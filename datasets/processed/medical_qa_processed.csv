@@ -1,0 +1,9 @@
+question,answer,category,question_length,answer_length
+How to improve health?,"To improve health: eat balanced diet, exercise regularly, get 7-8 hours sleep, stay hydrated, manage stress, and have regular checkups.",general,22,135
+What foods are good for heart?,"Heart-healthy foods include: salmon, walnuts, berries, oats, dark chocolate, leafy greens, avocado, and olive oil.",nutrition,30,114
+How much water should I drink daily?,Adults should drink 2-3 liters (8-10 glasses) of water daily. More if exercising or in hot weather.,hydration,36,99
+What is a healthy BMI range?,"Healthy BMI range is 18.5-24.9. Below 18.5 is underweight, 25-29.9 is overweight, 30+ is obese.",bmi,28,95
+How to reduce blood pressure?,"Reduce BP by: limiting salt, exercising regularly, maintaining healthy weight, limiting alcohol, managing stress, eating potassium-rich foods.",blood_pressure,29,142
+Best exercises for weight loss?,"Best exercises for weight loss: running, cycling, swimming, HIIT workouts, strength training, and walking 10,000+ steps daily.",fitness,31,126
+How to improve sleep quality?,"Improve sleep: maintain consistent schedule, avoid screens before bed, keep room dark and cool, avoid caffeine late, exercise regularly.",sleep,29,136
+What is healthy blood sugar level?,Normal fasting blood sugar: 70-100 mg/dL. Prediabetes: 100-125. Diabetes: 126+. After meals: below 140 mg/dL is normal.,diabetes,34,119

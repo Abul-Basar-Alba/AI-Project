@@ -1,0 +1,15 @@
+{
+  "total_records": 35,
+  "categories": {
+    "nutrition": 9,
+    "fitness": 8,
+    "medical": 6,
+    "pregnancy": 6,
+    "womens_health": 6
+  },
+  "nutrition_foods": 8,
+  "exercises": 7,
+  "qa_pairs": 8,
+  "pregnancy_weeks": 6,
+  "womens_health_records": 6
+}

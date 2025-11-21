@@ -1,0 +1,36 @@
+exercise_name,body_weight,calories_per_hour,intensity,type
+Walking,50,142.85714285714286,low,cardio
+Walking,60,171.42857142857142,low,cardio
+Walking,70,200.0,low,cardio
+Walking,80,228.57142857142856,low,cardio
+Walking,90,257.14285714285717,low,cardio
+Running,50,428.57142857142856,high,cardio
+Running,60,514.2857142857142,high,cardio
+Running,70,600.0,high,cardio
+Running,80,685.7142857142857,high,cardio
+Running,90,771.4285714285714,high,cardio
+Cycling,50,285.7142857142857,medium,cardio
+Cycling,60,342.85714285714283,medium,cardio
+Cycling,70,400.0,medium,cardio
+Cycling,80,457.1428571428571,medium,cardio
+Cycling,90,514.2857142857143,medium,cardio
+Swimming,50,357.14285714285717,high,cardio
+Swimming,60,428.57142857142856,high,cardio
+Swimming,70,500.0,high,cardio
+Swimming,80,571.4285714285714,high,cardio
+Swimming,90,642.8571428571429,high,cardio
+Yoga,50,128.57142857142858,low,flexibility
+Yoga,60,154.28571428571428,low,flexibility
+Yoga,70,180.0,low,flexibility
+Yoga,80,205.7142857142857,low,flexibility
+Yoga,90,231.42857142857144,low,flexibility
+Weight Lifting,50,214.28571428571428,medium,strength
+Weight Lifting,60,257.1428571428571,medium,strength
+Weight Lifting,70,300.0,medium,strength
+Weight Lifting,80,342.85714285714283,medium,strength
+Weight Lifting,90,385.7142857142857,medium,strength
+Dancing,50,250.0,medium,cardio
+Dancing,60,300.0,medium,cardio
+Dancing,70,350.0,medium,cardio
+Dancing,80,400.0,medium,cardio
+Dancing,90,450.00000000000006,medium,cardio

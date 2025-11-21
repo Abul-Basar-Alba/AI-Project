@@ -1,0 +1,191 @@
+{
+  "bmi_ranges": {
+    "underweight": {
+      "range": [
+        0,
+        18.5
+      ],
+      "advice": "Increase calorie intake with nutritious foods. Consult a nutritionist."
+    },
+    "normal": {
+      "range": [
+        18.5,
+        24.9
+      ],
+      "advice": "Maintain current healthy lifestyle and balanced diet."
+    },
+    "overweight": {
+      "range": [
+        25,
+        29.9
+      ],
+      "advice": "Reduce calorie intake, increase physical activity. Consider portion control."
+    },
+    "obese": {
+      "range": [
+        30,
+        100
+      ],
+      "advice": "Consult healthcare provider. Focus on gradual weight loss through diet and exercise."
+    }
+  },
+  "blood_pressure": {
+    "normal": {
+      "range": {
+        "systolic": [
+          90,
+          120
+        ],
+        "diastolic": [
+          60,
+          80
+        ]
+      },
+      "advice": "Maintain healthy lifestyle"
+    },
+    "elevated": {
+      "range": {
+        "systolic": [
+          120,
+          129
+        ],
+        "diastolic": [
+          60,
+          80
+        ]
+      },
+      "advice": "Reduce salt, exercise regularly"
+    },
+    "high": {
+      "range": {
+        "systolic": [
+          130,
+          200
+        ],
+        "diastolic": [
+          80,
+          120
+        ]
+      },
+      "advice": "Consult doctor, medication may be needed"
+    }
+  },
+  "blood_glucose": {
+    "normal": {
+      "range": [
+        70,
+        100
+      ],
+      "advice": "Maintain balanced diet and regular exercise"
+    },
+    "prediabetes": {
+      "range": [
+        100,
+        125
+      ],
+      "advice": "Reduce sugar intake, increase physical activity, monitor regularly"
+    },
+    "diabetes": {
+      "range": [
+        126,
+        500
+      ],
+      "advice": "Consult doctor immediately, medication and diet control essential"
+    }
+  },
+  "daily_water": {
+    "formula": "body_weight_kg * 0.033",
+    "min": 2.0,
+    "max": 4.0
+  },
+  "daily_steps": {
+    "sedentary": 5000,
+    "moderate": 7500,
+    "active": 10000,
+    "very_active": 12500
+  },
+  "sleep_hours": {
+    "adult": [
+      7,
+      9
+    ],
+    "teenager": [
+      8,
+      10
+    ],
+    "child": [
+      9,
+      12
+    ]
+  },
+  "pregnancy": {
+    "1": {
+      "baby_development": "Conception occurs",
+      "mother_changes": "Preparing for pregnancy",
+      "advice": "Start taking folic acid",
+      "trimester": 1
+    },
+    "8": {
+      "baby_development": "Size of a raspberry",
+      "mother_changes": "Morning sickness may begin",
+      "advice": "Eat small frequent meals",
+      "trimester": 1
+    },
+    "12": {
+      "baby_development": "Size of a plum",
+      "mother_changes": "First trimester ending",
+      "advice": "First ultrasound scan",
+      "trimester": 1
+    },
+    "20": {
+      "baby_development": "Size of a banana",
+      "mother_changes": "May feel baby movements",
+      "advice": "Midpoint scan, eat iron-rich foods",
+      "trimester": 2
+    },
+    "28": {
+      "baby_development": "Size of an eggplant",
+      "mother_changes": "Third trimester begins",
+      "advice": "Monitor baby kicks, prepare nursery",
+      "trimester": 3
+    },
+    "40": {
+      "baby_development": "Full term baby",
+      "mother_changes": "Ready for delivery",
+      "advice": "Watch for labor signs, hospital bag ready",
+      "trimester": 3
+    }
+  },
+  "womens_health": {
+    "Cramps": {
+      "phase": "Menstrual",
+      "advice": "Use heating pad, take pain relief, rest",
+      "severity": "moderate"
+    },
+    "Bloating": {
+      "phase": "Luteal",
+      "advice": "Reduce salt intake, stay hydrated, gentle exercise",
+      "severity": "mild"
+    },
+    "Mood swings": {
+      "phase": "Luteal",
+      "advice": "Practice relaxation techniques, get adequate sleep",
+      "severity": "moderate"
+    },
+    "Fatigue": {
+      "phase": "Menstrual",
+      "advice": "Rest well, eat iron-rich foods, stay hydrated",
+      "severity": "moderate"
+    },
+    "Headache": {
+      "phase": "Menstrual",
+      "advice": "Stay hydrated, reduce stress, get enough sleep",
+      "severity": "mild"
+    },
+    "Breast tenderness": {
+      "phase": "Luteal",
+      "advice": "Wear comfortable bra, reduce caffeine",
+      "severity": "mild"
+    }
+  }
+}

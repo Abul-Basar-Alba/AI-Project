@@ -1,0 +1,28 @@
+{
+  "project": "HealthNest AI Health Assistant",
+  "version": "1.0.0",
+  "date_trained": "2025-11-21 19:06:53",
+  "models": {
+    "qa_model": {
+      "type": "TF-IDF + Cosine Similarity",
+      "knowledge_base_size": 35,
+      "vocabulary_size": 108
+    },
+    "calorie_predictor": {
+      "type": "Random Forest Regressor",
+      "training_samples": 6,
+      "r2_score": 0.6641279132791327
+    },
+    "exercise_recommender": {
+      "type": "Random Forest Classifier",
+      "accuracy": 0.0
+    }
+  },
+  "datasets": {
+    "nutrition": 8,
+    "exercise": 35,
+    "medical_qa": 8,
+    "pregnancy": 6,
+    "womens_health": 6
+  }
+}

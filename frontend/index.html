@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthNest AI - Health Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">🏥</span>
+                    <h1>HealthNest AI</h1>
+                </div>
+                <p class="subtitle">Your Personal Health Assistant</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Sidebar - User Profile -->
+            <aside class="sidebar">
+                <div class="profile-card">
+                    <h3>📊 Your Profile</h3>
+                    <form id="profileForm">
+                        <div class="input-group">
+                            <label>Age</label>
+                            <input type="number" id="age" value="25" min="1" max="120">
+                        </div>
+                        <div class="input-group">
+                            <label>Gender</label>
+                            <select id="gender">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Weight (kg)</label>
+                            <input type="number" id="weight" value="70" min="1" max="300">
+                        </div>
+                        <div class="input-group">
+                            <label>Height (cm)</label>
+                            <input type="number" id="height" value="170" min="50" max="250">
+                        </div>
+                        <div class="input-group">
+                            <label>Activity Level</label>
+                            <select id="activity">
+                                <option value="sedentary">Sedentary</option>
+                                <option value="light">Light</option>
+                                <option value="moderate" selected>Moderate</option>
+                                <option value="active">Active</option>
+                                <option value="very_active">Very Active</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn-primary" onclick="updateProfile()">
+                            Update Profile
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Health Metrics -->
+                <div class="metrics-card" id="metricsCard" style="display: none;">
+                    <h3>📈 Your Metrics</h3>
+                    <div class="metric" id="bmiMetric">
+                        <span class="metric-label">BMI</span>
+                        <span class="metric-value">--</span>
+                    </div>
+                    <div class="metric" id="calorieMetric">
+                        <span class="metric-label">Daily Calories</span>
+                        <span class="metric-value">--</span>
+                    </div>
+                    <div class="metric" id="waterMetric">
+                        <span class="metric-label">Water Goal</span>
+                        <span class="metric-value">--</span>
+                    </div>
+                    <div class="metric" id="stepMetric">
+                        <span class="metric-label">Step Goal</span>
+                        <span class="metric-value">--</span>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Chat Area -->
+            <main class="chat-container">
+                <div class="chat-header">
+                    <h2>💬 Chat with HealthNest AI</h2>
+                    <span class="status" id="status">
+                        <span class="status-dot"></span> Ready
+                    </span>
+                </div>
+
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message bot-message">
+                        <div class="message-avatar">🤖</div>
+                        <div class="message-content">
+                            <p>Hello! I'm your HealthNest AI assistant. I can help you with:</p>
+                            <ul>
+                                <li>Nutrition & Diet advice</li>
+                                <li>Exercise & Fitness recommendations</li>
+                                <li>BMI & Health calculations</li>
+                                <li>Pregnancy guidance</li>
+                                <li>Women's health support</li>
+                                <li>General health questions</li>
+                            </ul>
+                            <p>Ask me anything about your health! 😊</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-input-container">
+                    <div class="quick-questions">
+                        <span class="quick-label">Quick questions:</span>
+                        <button class="quick-btn" onclick="askQuestion('How to improve health?')">
+                            🌟 Improve health
+                        </button>
+                        <button class="quick-btn" onclick="askQuestion('What is healthy BMI?')">
+                            📊 Healthy BMI
+                        </button>
+                        <button class="quick-btn" onclick="askQuestion('Best exercises for weight loss?')">
+                            🏃 Weight loss
+                        </button>
+                        <button class="quick-btn" onclick="askQuestion('How much water daily?')">
+                            💧 Water intake
+                        </button>
+                    </div>
+                    <div class="chat-input-wrapper">
+                        <input 
+                            type="text" 
+                            id="chatInput" 
+                            class="chat-input" 
+                            placeholder="Ask me about health, nutrition, fitness..."
+                            onkeypress="handleKeyPress(event)"
+                        >
+                        <button class="btn-send" onclick="sendMessage()">
+                            <span>Send</span>
+                            <span class="send-icon">📤</span>
+                        </button>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>⚠️ <strong>Disclaimer:</strong> This AI assistant provides general health information only. 
+            Always consult healthcare professionals for medical advice.</p>
+            <p class="copyright">HealthNest AI © 2024 | CIT-316 AI Project</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
