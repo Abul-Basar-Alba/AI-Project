@@ -74,6 +74,86 @@ def get_bmi_category(bmi):
     return None
 
 
+def handle_pregnancy_query(message, user_profile):
+    """Handle pregnancy-related queries"""
+    if 'pregnancy' not in health_knowledge:
+        return None
+    
+    # Extract week number if mentioned
+    import re
+    week_match = re.search(r'week\s*(\d+)', message)
+    
+    if week_match:
+        week = int(week_match.group(1))
+        week_key = f"week_{week}"
+        
+        if week_key in health_knowledge['pregnancy']:
+            info = health_knowledge['pregnancy'][week_key]
+            answer = f"🤰 **Pregnancy Week {week}:**\n\n" \
+                    f"**Baby Development:** {info['baby_development']}\n\n" \
+                    f"**Mother's Body:** {info['mother_changes']}\n\n" \
+                    f"**Advice:** {info['advice']}"
+            
+            return {
+                'answer': answer,
+                'confidence': 0.95,
+                'category': 'pregnancy'
+            }
+    
+    # General pregnancy advice
+    answer = "🤰 **Pregnancy Health Tips:**\n\n" \
+            "• Take prenatal vitamins (especially folic acid)\n" \
+            "• Eat a balanced diet rich in nutrients\n" \
+            "• Stay hydrated (8-10 glasses of water)\n" \
+            "• Exercise moderately (walking, prenatal yoga)\n" \
+            "• Get adequate rest and sleep\n" \
+            "• Attend all prenatal checkups\n" \
+            "• Avoid alcohol, smoking, and raw foods\n\n" \
+            "💡 Mention a specific week (e.g., 'week 20') for detailed information!"
+    
+    return {
+        'answer': answer,
+        'confidence': 0.85,
+        'category': 'pregnancy'
+    }
+
+
+def handle_womens_health_query(message, user_profile):
+    """Handle women's health queries"""
+    if 'womens_health' not in health_knowledge:
+        return None
+    
+    # Check for specific symptoms
+    for symptom, info in health_knowledge['womens_health'].items():
+        if symptom.replace('_', ' ') in message:
+            answer = f"👩 **{symptom.replace('_', ' ').title()}:**\n\n" \
+                    f"**Symptoms:** {info['symptoms']}\n\n" \
+                    f"**Advice:** {info['advice']}"
+            
+            return {
+                'answer': answer,
+                'confidence': 0.9,
+                'category': 'womens_health'
+            }
+    
+    # General women's health advice
+    answer = "👩 **Women's Health Tips:**\n\n" \
+            "• Maintain regular menstrual cycle tracking\n" \
+            "• Practice good hygiene\n" \
+            "• Eat iron-rich foods (spinach, lentils, red meat)\n" \
+            "• Exercise regularly\n" \
+            "• Get annual checkups and screenings\n" \
+            "• Manage stress through yoga or meditation\n" \
+            "• Stay hydrated\n\n" \
+            "💡 Ask about specific symptoms like cramps, PCOS, or fertility for detailed advice!"
+    
+    return {
+        'answer': answer,
+        'confidence': 0.8,
+        'category': 'womens_health'
+    }
+
+
 def get_daily_water(weight_kg):
     """Calculate daily water intake"""
     if 'daily_water' not in health_knowledge:
@@ -109,7 +189,7 @@ def get_calorie_needs(age, gender, weight_kg, height_cm, activity_level):
 
 
 def answer_question(question, user_profile=None):
-    """Answer health questions using Q&A model"""
+    """Answer health questions using Q&A model with improved flexibility"""
     if qa_vectorizer is None or qa_database is None:
         return {
             'answer': "Sorry, the Q&A model is not available at the moment.",
@@ -131,7 +211,8 @@ def answer_question(question, user_profile=None):
     best_match_idx = similarities.argmax()
     confidence = similarities[best_match_idx]
     
-    if confidence > 0.1:  # Threshold
+    # Lower threshold for more flexible matching
+    if confidence > 0.15:  # Lowered from 0.1 for better matching
         answer = qa_database['answers'][best_match_idx]
         category = qa_database['categories'][best_match_idx]
         
@@ -145,8 +226,15 @@ def answer_question(question, user_profile=None):
             'category': category
         }
     else:
+        # Provide helpful fallback with examples
         return {
-            'answer': "I'm not sure about that. Could you rephrase your question or ask about nutrition, fitness, BMI, blood pressure, pregnancy, or women's health?",
+            'answer': "🏥 I'm here to help with health questions! I can assist with:\n\n" +
+                     "• **Nutrition:** 'What foods are healthy?', 'How many calories do I need?'\n" +
+                     "• **Fitness:** 'What exercises should I do?', 'How to lose weight?'\n" +
+                     "• **Health Metrics:** 'What is a healthy BMI?', 'Normal blood pressure?'\n" +
+                     "• **Pregnancy:** 'Pregnancy week 20 info', 'Prenatal care tips'\n" +
+                     "• **Women's Health:** 'Period cramps relief', 'PCOS symptoms'\n\n" +
+                     "💡 Try rephrasing your question or ask about a specific health topic!",
             'confidence': 0.0,
             'category': 'unknown'
         }
@@ -213,17 +301,152 @@ def health_check():
 
 @app.route('/chat', methods=['POST'])
 def chat():
-    """Main chatbot endpoint"""
+    """Main chatbot endpoint with improved understanding"""
     data = request.json
     
     if not data or 'message' not in data:
         return jsonify({'error': 'No message provided'}), 400
     
-    message = data['message']
+    message = data['message'].strip()
+    message_lower = message.lower()
     user_profile = data.get('profile', None)
     
-    # Get answer
+    # Handle greetings and casual conversation
+    greetings = ['hi', 'hello', 'hey', 'hola', 'namaste', 'assalamu alaikum', 
+                 'good morning', 'good afternoon', 'good evening', 'salam', 'kon khabar']
+    
+    if any(greeting in message_lower for greeting in greetings) or len(message.split()) <= 2:
+        return jsonify({
+            'message': message,
+            'response': "Hello! 👋 I'm HealthNest AI, your personal health assistant. I can help you with:\n\n" +
+                       "🥗 Nutrition & diet advice\n" +
+                       "💪 Fitness & exercise recommendations\n" +
+                       "🤰 Pregnancy information\n" +
+                       "👩 Women's health questions\n" +
+                       "📊 BMI, blood pressure, and health metrics\n" +
+                       "🏥 General health advice\n\n" +
+                       "Just ask me anything about your health!",
+            'confidence': 1.0,
+            'category': 'greeting'
+        })
+    
+    # Check for specific health domains with more keywords
+    pregnancy_keywords = ['pregnancy', 'pregnant', 'week', 'trimester', 'baby', 'fetal', 'prenatal', 'gorbhoboti']
+    womens_health_keywords = ['period', 'menstrual', 'cramp', 'pcos', 'ovulation', 'fertility', 
+                               'menopause', 'endometriosis', 'masik', 'menses']
+    nutrition_keywords = ['calorie', 'calories', 'food', 'nutrition', 'diet', 'eat', 'meal', 
+                          'protein', 'carb', 'fat', 'vitamin', 'khabar', 'khaddo']
+    exercise_keywords = ['exercise', 'workout', 'fitness', 'gym', 'running', 'weight loss', 
+                         'cardio', 'strength', 'yoga', 'kashrot', 'byayam']
+    
+    # Pregnancy queries
+    if any(word in message_lower for word in pregnancy_keywords):
+        pregnancy_info = handle_pregnancy_query(message_lower, user_profile)
+        if pregnancy_info:
+            return jsonify({
+                'message': message,
+                'response': pregnancy_info['answer'],
+                'confidence': pregnancy_info['confidence'],
+                'category': 'pregnancy'
+            })
+    
+    # Women's health queries
+    if any(word in message_lower for word in womens_health_keywords):
+        womens_info = handle_womens_health_query(message_lower, user_profile)
+        if womens_info:
+            return jsonify({
+                'message': message,
+                'response': womens_info['answer'],
+                'confidence': womens_info['confidence'],
+                'category': 'womens_health'
+            })
+    
+    # Nutrition queries
+    if any(word in message_lower for word in nutrition_keywords):
+        if user_profile:
+            age = user_profile.get('age', 25)
+            gender = user_profile.get('gender', 'male')
+            weight = user_profile.get('weight', 70)
+            height = user_profile.get('height', 170)
+            activity = user_profile.get('activity_level', 'moderate')
+            
+            calories = get_calorie_needs(age, gender, weight, height, activity)
+            water = get_daily_water(weight)
+            
+            response_text = f"🥗 **Nutrition Advice:**\n\n" \
+                          f"📊 Daily calorie needs: {calories} kcal\n" \
+                          f"💧 Daily water intake: {water} liters\n\n" \
+                          f"**Balanced Diet Tips:**\n" \
+                          f"• Eat 5-6 small meals throughout the day\n" \
+                          f"• Include lean proteins (chicken, fish, legumes)\n" \
+                          f"• Choose complex carbs (brown rice, oats, quinoa)\n" \
+                          f"• Add healthy fats (nuts, avocado, olive oil)\n" \
+                          f"• Eat plenty of fruits & vegetables (5+ servings daily)\n" \
+                          f"• Limit processed foods, sugar, and salt\n" \
+                          f"• Stay hydrated throughout the day"
+        else:
+            response_text = "🥗 **General Nutrition Advice:**\n\n" \
+                          "A healthy diet includes:\n" \
+                          "• Proteins: Eggs, chicken, fish, legumes, dairy\n" \
+                          "• Carbohydrates: Whole grains, fruits, vegetables\n" \
+                          "• Fats: Nuts, seeds, olive oil, avocado\n" \
+                          "• Hydration: 8-10 glasses of water daily\n\n" \
+                          "💡 Update your profile for personalized recommendations!"
+        
+        return jsonify({
+            'message': message,
+            'response': response_text,
+            'confidence': 0.85,
+            'category': 'nutrition'
+        })
+    
+    # Exercise queries
+    if any(word in message_lower for word in exercise_keywords):
+        if user_profile and user_profile.get('activity_level'):
+            activity = user_profile.get('activity_level', 'moderate')
+            response_text = f"💪 **Exercise Recommendations:**\n\n" \
+                          f"Based on your {activity} activity level:\n\n" \
+                          f"**Cardio (3-5 times/week):**\n" \
+                          f"• Walking: 30-45 minutes\n" \
+                          f"• Jogging/Running: 20-30 minutes\n" \
+                          f"• Cycling: 30-45 minutes\n" \
+                          f"• Swimming: 30 minutes\n\n" \
+                          f"**Strength Training (2-3 times/week):**\n" \
+                          f"• Bodyweight exercises (push-ups, squats)\n" \
+                          f"• Weight lifting\n" \
+                          f"• Resistance bands\n\n" \
+                          f"**Flexibility (daily):**\n" \
+                          f"• Yoga or stretching: 10-15 minutes\n\n" \
+                          f"⚡ Start slowly and gradually increase intensity!"
+        else:
+            response_text = "💪 **Exercise Guidelines:**\n\n" \
+                          "**Weekly Goals:**\n" \
+                          "• 150 minutes moderate cardio OR 75 minutes vigorous cardio\n" \
+                          "• Strength training 2-3 times per week\n" \
+                          "• Flexibility exercises daily\n\n" \
+                          "**Popular Exercises:**\n" \
+                          "• Walking, jogging, cycling, swimming (cardio)\n" \
+                          "• Push-ups, squats, lunges (strength)\n" \
+                          "• Yoga, stretching (flexibility)\n\n" \
+                          "💡 Update your profile for personalized plans!"
+        
+        return jsonify({
+            'message': message,
+            'response': response_text,
+            'confidence': 0.85,
+            'category': 'exercise'
+        })
+    
+    # General health questions - use Q&A model
     result = answer_question(message, user_profile)
+    
+    # Add BMI info if profile available and relevant
+    if user_profile and user_profile.get('weight') and user_profile.get('height'):
+        if any(word in message_lower for word in ['bmi', 'weight', 'healthy', 'swasthyo']):
+            bmi = get_bmi(user_profile['weight'], user_profile['height'] / 100)
+            bmi_info = get_bmi_category(bmi)
+            if bmi_info:
+                result['answer'] += f"\n\n📊 Your BMI: {bmi:.1f} ({bmi_info['category']}) - {bmi_info['advice']}"
     
     return jsonify({
         'message': message,
