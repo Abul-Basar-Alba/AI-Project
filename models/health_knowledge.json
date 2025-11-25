@@ -160,32 +160,38 @@
     "Cramps": {
       "phase": "Menstrual",
       "advice": "Use heating pad, take pain relief, rest",
-      "severity": "moderate"
+      "severity": "moderate",
+      "severity_score": 2
     },
     "Bloating": {
       "phase": "Luteal",
       "advice": "Reduce salt intake, stay hydrated, gentle exercise",
-      "severity": "mild"
+      "severity": "mild",
+      "severity_score": 1
     },
     "Mood swings": {
       "phase": "Luteal",
       "advice": "Practice relaxation techniques, get adequate sleep",
-      "severity": "moderate"
+      "severity": "moderate",
+      "severity_score": 2
     },
     "Fatigue": {
       "phase": "Menstrual",
       "advice": "Rest well, eat iron-rich foods, stay hydrated",
-      "severity": "moderate"
+      "severity": "moderate",
+      "severity_score": 2
     },
     "Headache": {
       "phase": "Menstrual",
       "advice": "Stay hydrated, reduce stress, get enough sleep",
-      "severity": "mild"
+      "severity": "mild",
+      "severity_score": 1
     },
     "Breast tenderness": {
       "phase": "Luteal",
       "advice": "Wear comfortable bra, reduce caffeine",
-      "severity": "mild"
+      "severity": "mild",
+      "severity_score": 1
     }
   }
 }

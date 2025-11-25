@@ -1,28 +1,28 @@
 {
-  "trained_at": "2025-11-21T20:06:08.848123",
-  "qa_model": {
-    "vocabulary_size": 410,
-    "num_questions": 82,
-    "categories": [
-      "exercise",
-      "womens_health",
-      "general",
-      "bmi",
-      "blood_pressure",
-      "diabetes",
-      "hydration",
-      "heart",
-      "immunity",
-      "mental_health",
-      "sleep"
-    ]
+  "project": "HealthNest AI Health Assistant",
+  "version": "1.0.0",
+  "date_trained": "2025-11-25 19:18:34",
+  "models": {
+    "qa_model": {
+      "type": "TF-IDF + Cosine Similarity",
+      "knowledge_base_size": 35,
+      "vocabulary_size": 108
+    },
+    "calorie_predictor": {
+      "type": "Random Forest Regressor",
+      "training_samples": 28,
+      "r2_score": 0.6641279132791327
+    },
+    "exercise_recommender": {
+      "type": "Random Forest Classifier",
+      "accuracy": 0.0
+    }
   },
-  "calorie_predictor": {
-    "num_samples": 8,
-    "r2_score": 0.6333035362548747
-  },
-  "exercise_recommender": {
-    "num_exercises": 7,
-    "num_samples": 35
+  "datasets": {
+    "nutrition": 8,
+    "exercise": 35,
+    "medical_qa": 8,
+    "pregnancy": 6,
+    "womens_health": 6
   }
 }
